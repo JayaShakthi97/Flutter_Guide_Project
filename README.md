@@ -1,10 +1,8 @@
 # flutter_guide_project
 
-A new Flutter project.
+Anyone can use this project to understand how to structure a project effectively, use singleton pattern, make API calls, use Future builders correctly..
 
 ## Getting Started
-
-This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 
