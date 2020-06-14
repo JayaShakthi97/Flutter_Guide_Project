@@ -36,4 +36,19 @@ class API {
       throw Exception(e.toString());
     }
   }
+
+  static Future<Post> savePost(Map<String, dynamic> data) async {
+    try {
+    
+      final response = await _httpService.postWithOutToken(
+          url: _postUrl, args: json.encode(data));
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        return Post.fromMap(json.decode(response.body));
+      } else {
+        throw Exception(response.statusCode);
+      }
+    } catch (e) {
+      throw Exception(e.toString());
+    }
+  }
 }

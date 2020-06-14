@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_guide_project/_api/api.dart';
 import 'package:flutter_guide_project/_models/Post.dart';
+import 'package:flutter_guide_project/_utils/routes.dart';
+import 'package:flutter_guide_project/screens/addItem.dart';
 import 'package:flutter_guide_project/widgets/postListItem.dart';
 
 class HomePage extends StatefulWidget {
@@ -40,6 +42,10 @@ class _HomePageState extends State<HomePage> {
               }
               return Center(child: CircularProgressIndicator());
             }),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => AppRoutes.goto(context, AddItemScreen()),
+        child: Icon(Icons.add),
       ),
     );
   }

@@ -22,30 +22,29 @@ class _PostScreenState extends State<PostScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: FutureBuilder<Post>(
-            future: _post,
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                if (snapshot.hasError) {
-                  return Center(
-                    child: Text(snapshot.error.toString()),
-                  );
-                }
-                Post post = snapshot.data;
-                return Column(
-                  children: <Widget>[
-                    Text(
-                      post.title,
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    Text(post.body),
-                  ],
+      appBar: AppBar(title: Text('Post View')),
+      body: FutureBuilder<Post>(
+          future: _post,
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              if (snapshot.hasError) {
+                return Center(
+                  child: Text(snapshot.error.toString()),
                 );
               }
-              return Center(child: CircularProgressIndicator());
-            }),
-      ),
+              Post post = snapshot.data;
+              return Column(
+                children: <Widget>[
+                  Text(
+                    post.title,
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Text(post.body),
+                ],
+              );
+            }
+            return Center(child: CircularProgressIndicator());
+          }),
     );
   }
 }

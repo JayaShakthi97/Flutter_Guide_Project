@@ -29,7 +29,8 @@ flutter pub get
 
 ### If you are willing to contribute this,
 
-Fork this repo into your account first. Then download or clone the repo in your account and use it.
+Fork this repo into your account first. Then download or clone the repo in your account and use it. 
+
 Refer [this](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) to know how to fork and keep your forked repo synced with original repo.
 
 ```
